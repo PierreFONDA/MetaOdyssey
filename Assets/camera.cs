@@ -39,6 +39,14 @@ public class camera : MonoBehaviour
             // set the flag to false
             isDragging = false;
         }
+        //ZOOM in and out
+        if(Input.GetAxis("Mouse ScrollWheel") > 0 && cam.fieldOfView>=30){
+            cam.fieldOfView--;
+        }
+        if(Input.GetAxis("Mouse ScrollWheel") < 0 && cam.fieldOfView<=70){
+            cam.fieldOfView++;
+        }
+        
     }
 
     void LateUpdate()
@@ -68,6 +76,7 @@ public class camera : MonoBehaviour
             startMouseX = endMouseX;
             startMouseY = endMouseY;
         }
+
     }
 }
 
